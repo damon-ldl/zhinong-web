@@ -1,0 +1,460 @@
+.login {
+  height: 100vh;
+  display: flex;
+  /* 更柔和的分层背景 */
+  background:
+    radial-gradient(1200px 600px at -10% -10%, rgba(64, 169, 255, 0.09), transparent 60%),
+    radial-gradient(900px 500px at 110% 10%, rgba(24, 144, 255, 0.08), transparent 55%),
+    linear-gradient(135deg, #f7faff 0%, #ffffff 60%);
+  
+  .background {
+    flex: 5;
+    background-position: center;
+    background-size: cover;
+    display: flex; /* 启用flex布局 */
+    justify-content: flex-end; /* 水平右对齐 */
+    align-items: center; /* 垂直居中 */
+    padding-right: 50px; /* 右侧内边距50px，使组件向左移动 */
+    
+    
+    .uploadContainer {
+      // 与右侧loginBox保持一致的宽度，确保布局统一
+      width: 480px;
+      padding: 24px 24px;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      border-radius: 16px;
+      box-shadow: 0 10px 24px rgba(16, 38, 73, 0.06);
+      backdrop-filter: saturate(120%) blur(2px);
+    }
+    
+    .uploadTitle {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 12px;
+      font-weight: bold;
+      font-size: 20px;
+      text-align: left;
+      color: rgba(26, 102, 255, 1);
+      padding-left: 0;
+    }
+    
+    .uploadSubtitle {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 8px;
+    }
+    
+    .documentTypeContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .documentTypeLabel {
+      font-weight: bold;
+      font-size: 18px;
+      text-align: left;
+      color: rgba(26, 102, 255, 1);
+      margin-bottom: 10px;
+    }
+    
+    .documentTypeSelect {
+      width: 400px;
+      padding: 8px 12px;
+      border: 2px solid rgba(26, 102, 255, 0.3);
+      border-radius: 6px;
+      background-color: rgba(255, 255, 255, 0.9);
+      font-size: 14px;
+      color: #333;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.3s ease;
+    }
+    
+    .documentTypeSelect:focus {
+      border-color: rgba(26, 102, 255, 1);
+    }
+    
+    .temperatureContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-top: 16px;
+      margin-bottom: 6px;
+    }
+    
+    .temperatureLabel {
+      font-weight: bold;
+      font-size: 18px;
+      text-align: left;
+      color: rgba(26, 102, 255, 1);
+      margin-bottom: 10px;
+    }
+    
+    .temperatureSliderContainer {
+      display: flex;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    
+    .temperatureSlider {
+      width: 100%;
+      height: 6px;
+      background: #ddd;
+      border-radius: 3px;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+    
+    .temperatureSlider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      background: rgba(26, 102, 255, 0.9);
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .temperatureSlider::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      background: rgba(26, 102, 255, 0.9);
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      border: none;
+    }
+    
+    .temperatureValue {
+      margin-left: 10px;
+      font-size: 14px;
+      color: #333;
+      font-weight: 500;
+      min-width: 35px;
+    }
+    
+    .temperatureRange {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 12px;
+      color: #999;
+    }
+    
+    .reviewButtonContainer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 18px;
+      width: 100%;
+      align-self: stretch;
+    }
+    
+    .reviewButton {
+      padding: 10px 24px;
+      background-color: #1890ff;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.02s ease;
+      box-shadow: 0 6px 14px rgba(24, 144, 255, 0.25);
+      
+      &:hover {
+        background-color: #40a9ff;
+        box-shadow: 0 8px 18px rgba(24, 144, 255, 0.28);
+      }
+      
+      &:active {
+        background-color: #096dd9;
+        transform: translateY(0.5px);
+      }
+
+      &:disabled {
+        background-color: #b7d7ff;
+        box-shadow: none;
+        cursor: not-allowed;
+      }
+    }
+    
+    .uploadInputContainer {
+      display: flex;
+      justify-content: flex-start;
+    }
+    
+    .uploadInputContainer {
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      height: 210px;
+    }
+    
+    .uploadInput {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 2;
+    }
+    
+    .uploadPlaceholder {
+      width: 100%;
+      height: 100%;
+      border: 2px dashed rgba(26, 102, 255, 0.35);
+      border-radius: 16px;
+      background-color: rgba(255, 255, 255, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.25s ease;
+      z-index: 1;
+    }
+    
+    .uploadPlaceholder:hover {
+      border-color: rgba(26, 102, 255, 0.6);
+      background-color: rgba(26, 102, 255, 0.02);
+      box-shadow: inset 0 0 0 1px rgba(26,102,255,0.08), 0 10px 24px rgba(16, 38, 73, 0.05);
+    }
+    
+    .uploadInputContainer.dragging .uploadPlaceholder {
+      border-color: rgba(26, 102, 255, 1);
+      background-color: rgba(26, 102, 255, 0.1);
+      transform: scale(1.02);
+      box-shadow: 0 12px 28px rgba(16, 38, 73, 0.08);
+    }
+    
+    .uploadIcon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .pdfIcon, .docxIcon {
+      font-size: 40px;
+    }
+    
+    .uploadPlaceholder p {
+      margin: 5px 0;
+      color: #333;
+      font-size: 16px;
+    }
+    
+    .uploadHint {
+      font-size: 12px !important;
+      color: #666 !important;
+    }
+
+    /* 文件信息与预览链接 */
+    .uploadMeta {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #4a5568;
+      line-height: 1.6;
+      .fileName { word-break: break-all; }
+      a { color: #1890ff; text-decoration: underline; }
+    }
+  }
+  
+  .loginPage {
+    flex: 5;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    padding-left: 50px; /* 左侧内边距50px，使组件向右移动 */
+    
+    .loginBox {
+      width: 480px;
+      padding: 24px 24px;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      border-radius: 16px;
+      box-shadow: 0 10px 24px rgba(16, 38, 73, 0.06);
+      backdrop-filter: saturate(120%) blur(2px);
+    }
+    
+    .sliceTitle {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 12px;
+    }
+    
+    .sliceSubtitle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      .sliceActions { display: flex; gap: 8px; }
+      .btnSmall {
+        padding: 6px 10px;
+        font-size: 12px;
+        border-radius: 6px;
+        border: 1px solid #dbe3f0;
+        background: #f7fbff;
+        color: #1890ff;
+        cursor: pointer;
+        transition: all .2s ease;
+      }
+      .btnSmall:disabled { opacity: .4; cursor: not-allowed; }
+      .btnSmall:hover:not(:disabled) { background: #e8f4ff; }
+    }
+    
+    .sliceInputContainer {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 20px;
+    }
+    
+    .sliceInput {
+      width: 100%;
+      height: 260px;
+      padding: 15px;
+      border: 2px solid rgba(26, 102, 255, 0.18);
+      border-radius: 12px;
+      font-size: 14px;
+      color: #333;
+      resize: none;
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.98);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      text-align: left;
+      line-height: 1.5;
+      font-family: inherit;
+      box-shadow: 0 3px 8px rgba(16, 38, 73, 0.04);
+    }
+    
+    .sliceInput::placeholder {
+      color: #999;
+      text-align: center;
+    }
+    
+    .sliceInput:focus {
+      border-color: rgba(26, 102, 255, 1);
+      box-shadow: 0 6px 16px rgba(16, 38, 73, 0.06), 0 0 0 3px rgba(24, 144, 255, 0.08);
+    }
+    
+    /* 只读样式，使其看起来像展示框 */
+    .sliceInput[readonly] {
+      cursor: default;
+      background-color: rgba(248, 249, 250, 0.95);
+      box-shadow: inset 0 1px 0 rgba(16, 38, 73, 0.03);
+    }
+    
+    .resultInputContainer {
+      display: flex;
+      justify-content: flex-start;
+    }
+    
+    .resultInput {
+      width: 100%;
+      height: 220px;
+      padding: 15px;
+      border: 2px solid rgba(26, 102, 255, 0.18);
+      border-radius: 12px;
+      font-size: 14px;
+      color: #333;
+      resize: none;
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.98);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      text-align: left;
+      line-height: 1.5;
+      font-family: inherit;
+      box-shadow: 0 3px 8px rgba(16, 38, 73, 0.04);
+    }
+    
+    .resultInput::placeholder {
+      color: #999;
+      text-align: center;
+    }
+    
+    .resultInput:focus {
+      border-color: rgba(26, 102, 255, 1);
+      box-shadow: 0 6px 16px rgba(16, 38, 73, 0.06), 0 0 0 3px rgba(24, 144, 255, 0.08);
+    }
+    
+    /* 只读样式，使其看起来像展示框 */
+    .resultInput[readonly] {
+      cursor: default;
+      background-color: rgba(248, 249, 250, 0.95);
+      box-shadow: inset 0 1px 0 rgba(16, 38, 73, 0.03);
+    }
+    
+    .loginIcon {
+      width: 30px;
+      margin-right: 10px;
+      margin-top: -2px;
+    }
+    
+    .title {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 5px;
+    }
+    
+    .subtitle {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 5px;
+    }
+    
+    h1 {
+      font-weight: 800;
+      font-size: 20px;
+      text-align: left;
+      color: rgba(26, 102, 255, 1);
+      letter-spacing: 0.2px;
+      margin: 0;
+    }
+
+    /* 自定义滚动条（仅支持的浏览器） */
+    .sliceInput,
+    .resultInput {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(24, 144, 255, 0.5) rgba(0, 0, 0, 0.04);
+    }
+    .sliceInput::-webkit-scrollbar,
+    .resultInput::-webkit-scrollbar {
+      width: 8px;
+    }
+    .sliceInput::-webkit-scrollbar-track,
+    .resultInput::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.04);
+      border-radius: 8px;
+    }
+    .sliceInput::-webkit-scrollbar-thumb,
+    .resultInput::-webkit-scrollbar-thumb {
+      background: rgba(24, 144, 255, 0.5);
+      border-radius: 8px;
+    }
+  }
+}
+
+/* 响应式：窄屏上下布局 */
+@media (max-width: 1200px) {
+  .login {
+    height: auto;
+    min-height: 100vh;
+    flex-direction: column;
+    padding: 24px 20px;
+    gap: 20px;
+  }
+  .login .background,
+  .login .loginPage {
+    padding: 0 !important;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,47 @@
+.initalPage {
+    position: relative;
+}
+.leftLogo{
+    position: absolute;
+    left: 360px;
+    top: 30px;
+    width: 40px;
+    height: 40px;
+}
+.rightLogo{
+    position: absolute;
+    top: 30px;
+    right: 360px;
+    background-color: black;
+    color: white;
+}
+.centerPicture{
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+}
+.centerContent{
+    position: relative;
+    text-align: center;
+    top: 120px;
+}
+.centerText{
+    position: absolute;
+    width: 701px;
+    height: 56px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #1B1F26;
+    line-height: 28px;
+    text-align: center;
+    font-style: normal;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 20PX;
+}
+.StartButton{
+    position: absolute;
+    left: 50%;
+    bottom: -260px;
+    transform: translate(-50%, 0);
+}

@@ -1,0 +1,227 @@
+.talk{
+    position: relative;
+    height: 100%;
+}
+.inputMsg{
+    position: absolute;
+    bottom: 5%;
+    width: 800px;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.inputarea{
+    position: relative;
+    width: 100%;
+    height: 45px;
+    line-height: 20px;
+    border: none;
+    background-color:rgba(240, 243, 247, 1);
+    border-radius: 6px;
+    font-weight: 400;
+    padding: 12px 60px 8px 50px; /* 添加内边距 */
+    overflow: hidden;
+    resize: none;
+    left: 50%;
+    transform: translate(-50%);
+    color: #1B1F26;
+}
+.inputarea:hover, .inputarea:active{
+    border: rgba(240, 243, 247, 1) 1px solid;
+}
+.sendIcon{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 10px;
+    margin-top: 10px;
+}
+.voiceIcon{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+    margin-top: 12px;
+    right: 40px;
+}
+.linkIcon{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+    margin-left: 16px;
+    margin-top: 12px;
+    // cursor: pointer;
+}
+.tooltip {
+    position: absolute;
+    width: 266px;
+    height: 56px;
+    bottom: 120%;
+    background-color: #FFFFFF;
+    color: #1B1F26 ;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 4px;
+    z-index: 1;
+    line-height: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 
+              0 -4px 8px rgba(0, 0, 0, 0.1), 
+              4px 0 8px rgba(0, 0, 0, 0.1), 
+              -4px 0 8px rgba(0, 0, 0, 0.1); /* 添加四个方向的阴影 */
+}
+.tooltip::after {
+content: '';
+position: absolute;
+top: 100%;
+left: 8%;
+border-width: 5px;
+border-style: solid;
+border-color: #FFFFFF transparent transparent transparent;
+}
+.input{
+    position: absolute;
+    height: 86%;
+    width: 100%;
+    overflow-y: auto;
+}
+.showMsg{
+    position: absolute;
+    height: 96%;
+    width: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 20px;
+    // overflow-y: auto;
+    // position: relative;
+}
+.input::-webkit-scrollbar {
+    width: 0;
+}
+
+.input::-webkit-scrollbar-thumb {
+    border-radius: 0.5px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.input::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+.msgLine {
+    overflow: hidden;
+    padding: 10px;
+}
+.msg {
+    position: relative;
+    width: 100%;
+    font-weight: 400;
+    word-break: break-all;
+    padding: 10px;
+    font-size: 16px;
+    display: inline-block;
+    letter-spacing: 2px; /* 调整字与字之间的间距 */
+    color: #1B1F26;
+    line-height: 1.5; /* 调整行间距 */
+}
+.message-image{
+    width: 32px;
+    height: 32px;
+}
+.right{
+    position: absolute;
+    right: 0;
+}
+.left{
+    position: absolute;
+    left: 0;
+}
+.fl{
+    border-radius: 6px;
+    // background-color:#F0F3F7;
+    padding: 10px;
+    margin-left: 40px;
+    width: 90%;
+    float: left;
+}
+.msg-background{
+    background-color: #F0F3F7;
+  }  
+.fr{
+    float: right;
+    padding: 0 0 0 42px;
+    margin-right: 40px;
+}
+.horn-icon{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.horn-icon.left {
+    left: 8px;
+}
+.horn-icon.right {
+    right: 6px;
+}
+.system-icons {
+    position: absolute;
+    right: 40px;
+    bottom: -13px;
+    display: flex;
+    gap: 5px;
+}
+.system-icons img {
+    width: 20px;
+    height: 20px;
+}
+  .alert-message {
+    display: inline-block; /* 使用 inline-block 使宽度自适应内容 */
+    border-radius: 6px;
+    background-color: rgba(240, 243, 247, 0.6);
+    padding: 15px 10px;
+    height: 46px;
+    margin-top: 16px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #212429 ;
+    width: auto; /* 设置最大宽度 */
+    box-sizing: border-box; /* 包括 padding 在内的计算宽度 */
+    word-break: break-word; /* 防止单词超出容器宽度 */
+  }
+  .alert-messages {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 确保子元素对齐方式 */
+    margin-top: 30px;
+    margin-left: 50px;
+  }
+  .alert-message:hover {
+    background-color: rgba(26,102,255,0.1); /* 鼠标悬停时的背景颜色 */
+    color: #1A66FF; /* 鼠标悬停时的字体颜色 */
+}
+
+.alert-message:hover .right-outlined {
+    color: #1A66FF; /* 鼠标悬停时 RightOutlined 图标的颜色 */
+}
+
+.ant-collapse>.ant-collapse-item >.ant-collapse-header {
+    color: white !important
+}
+
+.share-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    font-size: 14px;
+  }
+  
+

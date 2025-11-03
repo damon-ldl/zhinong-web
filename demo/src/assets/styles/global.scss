@@ -1,0 +1,17 @@
+body{
+    padding: 0;
+    margin: 0;
+    height: 100vh; /* 让 body 高度占满整个视口 */
+    // background-image: url('../bcpicture.png');
+    // background-position: center; /* 居中显示图片 */
+    // background-size: cover;
+    position: relative;
+    // 文字不被选中
+    user-select: none;   
+}
+.demo-logo{
+    height: 60px;
+    margin: 16px 40px 16px -50px;
+    // text-align: center;
+}
+  

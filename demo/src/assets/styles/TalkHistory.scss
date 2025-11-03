@@ -1,0 +1,21 @@
+.scrollable{
+    position: absolute;
+    height: 98%;
+    overflow-y: auto; /* 允许内容垂直滚动 */
+}
+.add-talk,.search{
+    width: 160px;
+    height: 35px;
+    margin: 10px 20px;
+}
+.talk-history-item {
+    width: 90%;
+    height: 20px;
+    line-height: 20px;
+    margin: 10px 20px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.talk-history-item:hover{
+    color: #1A66FF;
+}

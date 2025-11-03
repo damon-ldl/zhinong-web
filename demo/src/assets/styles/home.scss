@@ -1,0 +1,66 @@
+.ant-layout-header{
+    background-color: white !important;
+    padding: 0 !important;
+}
+.ant-layout-sider{
+    background-color: rgba(240, 243, 247, 1) !important;
+    transition: width 0.3s, margin 0.3s;
+}
+.sidercontrol{
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item{
+    padding: 5px !important;
+}
+.HeaderIcon{
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+.logout:hover {
+    color: red !important // 设置退出菜单项悬停时的文字颜色为红色
+  }
+.ant-modal .ant-modal-content{
+    background-color: #F0F3F7 !important;
+}
+.ant-modal .ant-modal-header{
+    background: none;
+}
+.modal-content {
+    display: flex;
+  }
+  
+.left-operate {
+flex: 1;
+}
+
+.right-content {
+    width: 399px;
+    background: #FFFFFF;
+    border-radius: 6px;
+    height: 252px;
+    margin-top: 16px;
+}
+  
+.left-operate p img{
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+}
+.left-operate p{
+    width: 129px;
+    height: 44px;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left-operate p.selected {
+    background-color: #fff;
+    border-radius: 6px;
+  }
+.left-operate p:last-child{
+    margin-bottom: 40px;
+}
